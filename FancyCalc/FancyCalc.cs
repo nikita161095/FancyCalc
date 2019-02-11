@@ -38,6 +38,15 @@ namespace FancyCalc
             {
                 pos_equal = expression.Length;
             }
+            try
+            {
+                double.Parse(expression.Substring(0, pos_sign));
+                double.Parse(expression.Substring(pos_sign + 1, pos_equal - 1 - pos_sign));
+            }
+            catch
+            {
+                return 0;
+            }
             double a = double.Parse(expression.Substring(0, pos_sign));
             double b = double.Parse(expression.Substring(pos_sign + 1, pos_equal - 1 - pos_sign));
             if (expression.IndexOf('+') != -1)
