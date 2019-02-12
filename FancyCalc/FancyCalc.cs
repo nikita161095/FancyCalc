@@ -45,7 +45,7 @@ namespace FancyCalc
             }
             catch
             {
-                return 0;
+                throw new ArgumentNullException();
             }
             double a = double.Parse(expression.Substring(0, pos_sign));
             double b = double.Parse(expression.Substring(pos_sign + 1, pos_equal - 1 - pos_sign));
