@@ -63,6 +63,10 @@ namespace FancyCalc
             }
             else if (expression.IndexOf('/') != -1)
             {
+                if (b == 0)
+                {
+                    throw new ArgumentException();
+                }
                 return a / b;
             }
             else
