@@ -33,21 +33,21 @@ namespace FancyCalc
             //throw new NotImplementedException();
             int pos_sign = expression.IndexOfAny(new char[] { '+', '-', '*', '/' });
             int pos_equal = expression.IndexOf('=');
+            double a;
+            double b;
             if (pos_equal == -1)
             {
                 pos_equal = expression.Length;
             }
             try
             {
-                double.Parse(expression.Substring(0, pos_sign));
-                double.Parse(expression.Substring(pos_sign + 1, pos_equal - 1 - pos_sign));
+                a = double.Parse(expression.Substring(0, pos_sign));
+                b = double.Parse(expression.Substring(pos_sign + 1, pos_equal - 1 - pos_sign));
             }
             catch
             {
                 throw new ArgumentNullException();
             }
-            double a = double.Parse(expression.Substring(0, pos_sign));
-            double b = double.Parse(expression.Substring(pos_sign + 1, pos_equal - 1 - pos_sign));
             if (expression.IndexOf('+') != -1)
             {
                 return a + b;
