@@ -31,6 +31,10 @@ namespace FancyCalc
         public double Culculate(string expression)
         {
             //throw new NotImplementedException();
+            if (expression == null)
+            {
+                throw new ArgumentNullException();
+            }
             int pos_sign = expression.IndexOfAny(new char[] { '+', '-', '*', '/' });
             int pos_equal = expression.IndexOf('=');
             double a;
